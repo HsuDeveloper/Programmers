@@ -5,21 +5,17 @@
 
 using namespace std;
 
-bool d[10000000];
-
 bool find(int n){
-    if(d[n]) return 1;
     if(n<=1) return 0;
-    
+    if(n==2) return 1;
+
     for(int i=2;i<sqrt(n) + 1;i++){
         if(n%i == 0)return 0;
     }
-    d[n] = 1;
     return 1;
 }
 
 int solution(string numbers) {
-    d[2] = 1;
     int answer = 0;
     int MAX,MIN,size = numbers.size();
     vector<char> v;

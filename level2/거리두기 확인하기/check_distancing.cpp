@@ -42,7 +42,9 @@ vector<int> solution(vector<vector<string>> places) {
                     bool d[5][5]={0,};
                     if(!check(places[i],k,j,d,0)) flag = 0;
                 }
+                if(!flag) break;
             }
+            if(!flag) break;
         }
         answer.push_back(flag);
     }

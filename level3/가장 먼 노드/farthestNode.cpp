@@ -9,9 +9,9 @@ int solution(int n, vector<vector<int>> edge) {
     vector<vector<int>> graph(n+1);
     queue<pair<int,int>> q;
 
-    int d[n+1] = {0,};
+    int d[20001] = {0,};
 
-    bool c[n+1] = {0,};
+    bool c[20001] = {0,};
 
     for(int i=0;i<edge.size();i++){
         graph[edge[i][0]].push_back(edge[i][1]);

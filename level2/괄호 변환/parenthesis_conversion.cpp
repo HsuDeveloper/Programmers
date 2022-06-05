@@ -33,24 +33,24 @@ string change(string p){
     return p;
 }
 
-string solution(string p) {
+string solution(string p) { 
     string answer = "";
-    string n,v;
+    string u,v;
     if(p == "") return answer;
     if(per_check(p))return p;
 
 
     for(int i=1;i<p.size()+1;i++){
         if(check(p.substr(0,i))){
-            n = p.substr(0,i);
+            u = p.substr(0,i);
             v = p.substr(i);
             break;
         }
     }
-    if(per_check(n)) answer = n + solution(v);
+    if(per_check(u)) answer = u + solution(v);
     else {
-        n = change(n);
-        answer = '('+ solution(v) + ')' + n;
+        u = change(u);
+        answer = '('+ solution(v) + ')' + u;
     }
 
 
@@ -58,6 +58,7 @@ string solution(string p) {
 }
 
 int main(){
+
 
     string p = "()))((()";
     cout<<solution(p);
